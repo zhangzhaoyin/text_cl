@@ -15,10 +15,12 @@ from data_utils import cut,getLabels
 
 
 class Models(object):
-    def load_data(self):
-        company_DATA = pd.read_csv(self.config.trainFilename, encoding="utf8")
 
-        company_DATA = company_DATA.drop_duplicates()
+    def load_data(self):
+        company_DATA = pd.read_csv(self.config.FLAGS.trainfile_dir, encoding="utf8")
+
+        # company_DATA = company_DATA.drop_duplicates()
+        print(company_DATA.shape)
 
         company_DATA = company_DATA[company_DATA.businessScope.notnull() & company_DATA.industry.notnull()]
         labels = pd.DataFrame.from_dict(getLabels())
