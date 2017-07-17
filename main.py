@@ -6,6 +6,7 @@ import pandas as pd
 from data_utils import cut, getLabels
 from sklearn.model_selection import train_test_split
 from modelTrain import Models
+from modelLstm import LstmModel
 import pandas as pd
 import tensorflow as tf
 
